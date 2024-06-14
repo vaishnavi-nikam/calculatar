@@ -1,0 +1,90 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .main{
+        height: 650px;
+        width: 430px;
+        background-color: black;
+        margin-left: 500px;
+        margin-top: 40px;
+    }
+     #display{
+            height: 50px;
+            width: 90%;
+            background-color: gray; color: white;
+            position: relative;
+            top: 20px;
+            left: 22px;
+            
+            font-size: 36px;
+            color: white;
+            font-weight: bold;
+        }
+    
+</style>
+<body>
+    <div class="main">
+           <div id="display"></div>
+
+        <button onclick="clearDisplay()" style="height: 65px; width: 65px;margin-top: 50px;margin-left: 35px; background-color: gray; color: white; float: left;">c</button>
+        <button onclick="appendToDisplay('⬅')" style="height: 65px; width: 65px;margin-top: 50px;margin-left: 35px; background-color: gray; color: white; float: left;">⬅</button>
+        <button onclick="appendToDisplay('/')" style="height: 65px; width: 65px;margin-top: 50px;margin-left: 35px; background-color: gray; color: white; float: left;">/</button>
+        <button onclick="appendToDisplay('%')" style="height: 65px; width: 65px;margin-top: 50px;margin-left: 35px; background-color: gray; color: white; float: left;">%</button>
+
+
+        <button onclick="appendToDisplay('7')" style="height: 65px; width: 65px;margin-top: 50px;margin-left: 35px; background-color: gray; color: white; float: left;">7</button>
+        <button onclick="appendToDisplay('8')" style="height: 65px; width: 65px;margin-top: 50px;margin-left: 35px; background-color: gray; color: white; float: left;">8</button>
+        <button onclick="appendToDisplay('9')" style="height: 65px; width: 65px;margin-top: 50px;margin-left: 35px; background-color: gray; color: white; float: left;">9</button>
+        <button onclick="appendToDisplay('.')" style="height: 65px; width: 65px;margin-top: 50px;margin-left: 35px; background-color: gray; color: white; float: left;">.</button>
+
+
+
+        <button onclick="appendToDisplay('4')" style="height: 65px; width: 65px;margin-top: 50px;margin-left: 35px; background-color: gray; color: white; float: left;">4</button>
+        <button onclick="appendToDisplay('5')" style="height: 65px; width: 65px;margin-top: 50px;margin-left: 35px; background-color: gray; color: white; float: left;">5</button>
+        <button onclick="appendToDisplay('6')" style="height: 65px; width: 65px;margin-top: 50px;margin-left: 35px; background-color: gray; color: white; float: left;">6</button>
+        <button onclick="appendToDisplay('.')" style="height: 65px; width: 65px;margin-top: 50px;margin-left: 35px; background-color: gray; color: white; float: left;">.</button>
+
+
+
+        <button onclick="appendToDisplay('1')" style="height: 65px; width: 65px;margin-top: 50px;margin-left: 35px; background-color: gray; color: white; float: left;">1</button>
+        <button onclick="appendToDisplay('2')" style="height: 65px; width: 65px;margin-top: 50px;margin-left: 35px; background-color: gray; color: white; float: left;">2</button>
+        <button onclick="appendToDisplay('3')" style="height: 65px; width: 65px;margin-top: 50px;margin-left: 35px; background-color: gray; color: white; float: left;">3</button>
+        <button onclick="appendToDisplay('+')" style="height: 65px; width: 65px;margin-top: 50px;margin-left: 35px; background-color: gray; color: white; float: left;">+</button>
+
+
+        <button onclick="appendToDisplay('0')" style="height: 65px; width: 65px;margin-top: 50px;margin-left: 35px; background-color: gray; color: white; float: left;">0</button>
+        <button onclick="appendToDisplay('00')" style="height: 65px; width: 65px;margin-top: 50px;margin-left: 35px; background-color: gray; color: white; float: left;">00</button>
+        <button onclick="appendToDisplay('.')" style="height: 65px; width: 65px;margin-top: 50px;margin-left: 35px; background-color: gray; color: white; float: left;">.</button>
+        <button onclick="calculate()" style="height: 65px; width: 65px;margin-top: 50px;margin-left: 35px; background-color: gray; color: white; float: left;">=</button>
+
+
+       
+    </div>
+
+    <script>
+        function appendToDisplay(value){
+            document.getElementById('display').innerText += value;
+        }
+
+        function clearDisplay(){
+            document.getElementById('display').innerText = '';
+        }
+
+        function calculate(){
+            const display=document.getElementById('display').innerText;
+            try{
+                const result = eval(display);
+                document.getElementById('display').innerText = result;
+            }catch (error) {
+                document.getElementById('display').innerText = 'error';
+            }
+        }
+    </script>
+</body>
+</html>
+
